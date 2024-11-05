@@ -1,0 +1,14 @@
+model ThemeArticle {
+    id String @id @default(auto()) @map("_id") @db.ObjectId
+
+    articleId String @db.ObjectId
+    themeId String @db.ObjectId
+
+    article Article @relation(fields: [articleId], references: [id], onDelete: Cascade)
+    theme Theme @relation(fields: [themeId], references: [id], onDelete: Cascade)
+
+    @@index([articleId])
+    @@index([themeId])
+
+
+}

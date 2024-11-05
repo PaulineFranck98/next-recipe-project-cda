@@ -1,0 +1,6 @@
+model Theme {
+     id String @id @default(auto()) @map("_id") @db.ObjectId
+     themeName String 
+
+     articles ThemeArticle[]
+}

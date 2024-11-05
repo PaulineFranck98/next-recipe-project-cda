@@ -1,0 +1,19 @@
+model Recipe {
+    id String @id @default(auto()) @map("_id") @db.ObjectId
+    name String 
+    preparationTime Int
+    isVegan Boolean
+    isHealthy Boolean
+    description String
+    categoryId String @db.ObjectId
+    imageUrl String?
+
+    category Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+    steps Step[]
+    ingredients IngredientRecipe[]
+    tools ToolRecipe[]
+    comments Comment[]
+
+    
+}
