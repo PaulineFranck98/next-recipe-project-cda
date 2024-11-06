@@ -5,11 +5,10 @@ import Image from "next/image"
 const NavBar = () => {
   return (
     <div>
-      <nav className='flex gap-3 bg-slate-800 px-16 py-5 mb-8'>
+      <nav className='flex gap-3 bg-slate-800 px-16 py-4 mb-8 items-center justify-between'>
       {/* https://res.cloudinary.com/dgydgrbim/image/upload/v1730844476/lets-cook-logo_aopxi2.png */}
       <Image 
-        className='rounded-md'
-        src='https://res.cloudinary.com/dgydgrbim/image/upload/v1730844871/logo1-letscook_krvpgb.png'
+        src='https://res.cloudinary.com/dgydgrbim/image/upload/v1730878318/lets-cook_logo_qwsqfy.png'
         width={180}
         height={100}
         alt='logo'

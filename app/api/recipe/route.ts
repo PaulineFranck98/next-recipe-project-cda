@@ -8,6 +8,9 @@ export async function GET () {
             orderBy: {
                 name: 'asc'
             },
+            include : {
+                category : true
+            }
         })
 
         return NextResponse.json(recipes)

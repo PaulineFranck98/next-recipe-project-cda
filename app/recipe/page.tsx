@@ -1,20 +1,24 @@
 'use client'
 
-import { Recipe } from '@prisma/client'
 import React, {useState, useEffect} from 'react'
-import Image from "next/image"
-import Link from 'next/link'
+import RecipeCard from '@/components/RecipeCard'
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+import { EffectCoverflow } from 'swiper/modules';
 
 
 const RecipePage = () => {
 
  // récupération de la liste des ustensils avec hooks
- const [recipes, setRecipes] = useState<Recipe[]>([])
+ const [recipes, setRecipes] = useState<RecipeWithCategoryAndDetails[]>([])
 
  useEffect(() => {
      const fetchRecipes = async () => {
          const response = await fetch('/api/recipe')
-         const data = await response.json()
+         const data: RecipeWithCategoryAndDetails[] = await response.json()
          setRecipes(data)
      }
 
@@ -24,23 +28,29 @@ const RecipePage = () => {
 
 
   return (
-    <div>
+    <Swiper
+        effect={'coverflow'}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={5}
+        spaceBetween={10}
+        coverflowEffect={{
+        rotate: 20,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+        }}
+        modules={[EffectCoverflow]}  
+    >
         { recipes.map((recipe) =>(
-            <Link key={recipe.id } href={`/recipe/${recipe.id}`}>
-                <p >{ recipe.name }</p>
-            {recipe.imageUrl && (
-                <Image 
-                    src={recipe.imageUrl}
-                    width={100}
-                    height={100}
-                    alt={`Image of ${recipe.name}`}
-                />
-            )}
-            </Link>
+            <SwiperSlide key={recipe.id }>
+                <RecipeCard recipe={recipe} />
+            </SwiperSlide>
    
     ))}
 
-</div>
+    </Swiper>
 
   )
 }
