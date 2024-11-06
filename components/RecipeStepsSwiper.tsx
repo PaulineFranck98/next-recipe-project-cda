@@ -18,7 +18,7 @@ export default function RecipeStepsSwiper ({ steps } : RecipeStepsSwiperProps) {
     >
         {steps.map((step, index) => (
             <SwiperSlide key={step.id}>
-                <div className='p-4 bg-slate-800 rounded-md shadow-md h-[40vh] flex flex-col justify-center gap-3 mb-3 '>
+                <div className='p-4 bg-slate-800 rounded-md shadow-md h-[40vh] flex flex-col justify-center gap-3 mb-9 '>
                     <h3 className='font-semibold text-center mb-5 text-3xl text-salmon'>
                         {index + 1}
                     </h3>
