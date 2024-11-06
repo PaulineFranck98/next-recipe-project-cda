@@ -3,7 +3,7 @@ import Image from "next/image"
 import CategoryTag  from '@/components/CategoryTag'
 import PreparationTimeGauge from '@/components/PreparationTimeGauge'
 import Link from 'next/link'
-import { Clock10, ChevronRight } from 'lucide-react';
+import { Clock10, ChevronRight, Leaf, HeartPulse  } from 'lucide-react';
 
 interface RecipeCardProps {
     recipe: RecipeWithCategoryAndDetails
@@ -21,6 +21,13 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
                     fill={true}
                     alt={`Image of ${recipe.name}`}
                 />
+            )}
+            {(recipe.isHealthy || recipe.isVegan) && (
+                <div className='absolute top-2 right-2 flex gap-2 bg-white py-1 px-2  rounded-full bg-opacity-80'>
+                    {recipe.isVegan && <Leaf size={22} strokeWidth={1} className='fill-lime-400 text-black'/>}
+                    {recipe.isHealthy && <HeartPulse size={22} strokeWidth={1} className='fill-red-400 text-black'/>}
+
+                </div>
             )}
         </div>
         <div className=' flex flex-col gap-3 items-start p-3'>

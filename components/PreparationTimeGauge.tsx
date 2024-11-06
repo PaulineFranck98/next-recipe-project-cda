@@ -1,7 +1,7 @@
 import React from 'react'
 import { Gauge } from 'lucide-react';
 
-type PreparationTimeGaugeProps = {
+interface PreparationTimeGaugeProps  {
     preparationTime: number
 }
 
@@ -12,7 +12,7 @@ const PreparationTimeGauge: React.FC<PreparationTimeGaugeProps> = ({ preparation
    
    if (preparationTime <= 10){
         coloredGauges = 1
-        color = 'text-green-500'
+        color = 'text-lime-600'
    } else if (preparationTime <= 20){
         coloredGauges = 2
         color = 'text-yellow-500'

@@ -9,16 +9,29 @@ interface StepType {
     text: string;
 }
 
+interface IngredientType {
+    id: string;
+    ingredientName : string;
+    imageUrl?: string;
+}
+
+interface ToolType {
+    id: string;
+    toolName: string;
+    imageUrl?: string;
+}
+
 interface IngredientRecipeType {
     id: string;
-    ingredientName: string;
     quantity: number;
     unit: string;
+    ingredient: IngredientType
+    
 }
 
 interface ToolRecipeType {
     id: string;
-    toolName: string;
+    tool: ToolType  
 }
 
 interface RecipeWithCategoryAndDetails {

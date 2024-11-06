@@ -8,6 +8,8 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import { EffectCoverflow } from 'swiper/modules';
+import { Salad } from 'lucide-react';
+
 
 
 const RecipePage = () => {
@@ -28,30 +30,33 @@ const RecipePage = () => {
 
 
   return (
-    <Swiper
-        effect={'coverflow'}
-        grabCursor={true}
-        centeredSlides={true}
-        slidesPerView={5}
-        spaceBetween={10}
-        coverflowEffect={{
-        rotate: 20,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        slideShadows: true,
-        }}
-        modules={[EffectCoverflow]}  
-    >
-        { recipes.map((recipe) =>(
-            <SwiperSlide key={recipe.id }>
-                <RecipeCard recipe={recipe} />
-            </SwiperSlide>
-   
-    ))}
+    <div className='max-w-screen-xl mx-auto'>
+        <h1 className='text-3xl mb-10 flex gap-2 justify-center items-center'>Latest Recipes <Salad className='text-lime-400' size={26} /></h1>
+        <Swiper
+            effect={'coverflow'}
+            grabCursor={true}
+            centeredSlides={true}
+            slidesPerView={5}
+            spaceBetween={10}
+            loop={true}
+            coverflowEffect={{
+                rotate: 20,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            }}
+            modules={[EffectCoverflow]}  
+        >
+            { recipes.map((recipe) =>(
+                <SwiperSlide key={recipe.id }>
+                    <RecipeCard recipe={recipe} />
+                </SwiperSlide>
+    
+        ))}
 
-    </Swiper>
-
+        </Swiper>
+    </div>
   )
 }
 
