@@ -5,7 +5,7 @@ import{ useEffect, useState } from 'react'
 import { useParams } from 'next/navigation'
 import Image from "next/image"
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
-import { CookingPot, ListChecks, Clock10, ArrowDownToLine, Heart, Route } from 'lucide-react';
+import { CookingPot, ListChecks, Clock10, Heart, Route } from 'lucide-react';
 import CategoryTag  from '@/components/CategoryTag'
 import PreparationTimeGauge from '@/components/PreparationTimeGauge'
 import RecipeStepsSwiper from '@/components/RecipeStepsSwiper'

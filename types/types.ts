@@ -1,3 +1,11 @@
+interface UserType {
+    id: string;
+    username: string;
+    email: string;
+    role: "USER" | "ADMIN"; 
+}
+
+
 interface CategoryType {
     id: string;
     categoryName: string;
@@ -48,4 +56,31 @@ interface RecipeWithCategoryAndDetails {
     ingredients: IngredientRecipeType[];
     tools: ToolRecipeType[];
 
+}
+
+interface ThemeType {
+    id: string;
+    themeName: string;
+}
+
+interface ThemeArticleType {
+    id: string;
+    theme: ThemeType;
+}
+
+interface ArticleCommentType {
+    id: string;
+    commentText: string;
+    creationDate: Date;
+    user: UserType
+}
+
+interface ArticleWithCommentsAndThemes {
+    id: string;
+    title: string;
+    publicationDate: Date;
+    content: string;
+    user: UserType;
+    comments: ArticleCommentType[];
+    themes: ThemeArticleType[];
 }

@@ -11,9 +11,20 @@ const NavBar = () => {
         width={180}
         height={100}
         alt='logo'
-    />
-        <Link className=' hover:text-slate-400 duration-300' href="/recipe">Recipes</Link>
-        
+    />  <ul className='flex gap-8'>
+          <li>
+            <Link className=' hover:text-slate-400 duration-300' href="/recipe">Recipes</Link>
+          </li>
+          <li>
+            <Link className=' hover:text-slate-400 duration-300' href="">Search</Link>
+          </li>
+          <li>
+            <Link className=' hover:text-slate-400 duration-300' href="/article">Blog</Link>
+          </li>
+          <li>
+            <Link className=' hover:text-slate-400 duration-300' href="">Favorites</Link>
+          </li>
+        </ul>
       </nav>
     
   )

@@ -88,11 +88,11 @@ const RecipePDFGenerator: React.FC<RecipePDFGeneratorProps> = ({ recipe }) => {
             theme: 'striped',
         })
 
-        // doc.save(`${recipe.name}.pdf`)
+        doc.save(`${recipe.name}.pdf`)
          // génération d'un blob pour la prévisualisation
-        const pdfBlob = doc.output('blob')
-        const pdfUrl = URL.createObjectURL(pdfBlob)
-        window.open(pdfUrl)
+        // const pdfBlob = doc.output('blob')
+        // const pdfUrl = URL.createObjectURL(pdfBlob)
+        // window.open(pdfUrl)
 
     }
 
