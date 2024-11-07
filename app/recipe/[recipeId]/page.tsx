@@ -11,6 +11,7 @@ import PreparationTimeGauge from '@/components/PreparationTimeGauge'
 import RecipeStepsSwiper from '@/components/RecipeStepsSwiper'
 import IngredientsList from '@/components/IngredientsList'
 import ToolsList from '@/components/ToolsList'
+import RecipePDFGenerator from '@/components/RecipePDFGenerator'
 
 const RecipeDetailPage = () => {
 
@@ -45,7 +46,7 @@ const RecipeDetailPage = () => {
                             <PreparationTimeGauge preparationTime={recipe.preparationTime}/>
                         </div>
                         <div className='flex gap-4 mt-4'>
-                            <button className='flex gap-2 items-center px-4 py-2 bg-salmon rounded-lg'><ArrowDownToLine size={18} /> Download</button>
+                            <RecipePDFGenerator recipe={recipe} />
                             <button className='flex gap-2 items-center px-4 py-2 bg-salmon rounded-lg'><Heart size={18}/> Favorite</button>
                         </div>
                     </div>
