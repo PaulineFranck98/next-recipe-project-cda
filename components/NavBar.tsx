@@ -23,7 +23,7 @@ const NavBar = () => {
             <Link className=' hover:text-hoverColor duration-300' href="/article">Blog</Link>
           </li>
           <li>
-            <Link className=' hover:text-hoverColor duration-300' href="">Favorites</Link>
+            <Link className=' hover:text-hoverColor duration-300' href="/favorite">Favorites</Link>
           </li>
           <li>
               <ThemeToggle />

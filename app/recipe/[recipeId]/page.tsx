@@ -5,13 +5,14 @@ import{ useEffect, useState } from 'react'
 import { useParams } from 'next/navigation'
 import Image from "next/image"
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
-import { CookingPot, ListChecks, Clock10, Heart, Route } from 'lucide-react';
+import { CookingPot, ListChecks, Clock10, Route } from 'lucide-react';
 import CategoryTag  from '@/components/CategoryTag'
 import PreparationTimeGauge from '@/components/PreparationTimeGauge'
 import RecipeStepsSwiper from '@/components/RecipeStepsSwiper'
 import IngredientsList from '@/components/IngredientsList'
 import ToolsList from '@/components/ToolsList'
 import RecipePDFGenerator from '@/components/RecipePDFGenerator'
+import FavoriteButton from '@/components/FavoriteButton'
 
 const RecipeDetailPage = () => {
 
@@ -47,7 +48,7 @@ const RecipeDetailPage = () => {
                         </div>
                         <div className='flex gap-4 mt-4'>
                             <RecipePDFGenerator recipe={recipe} />
-                            <button className='flex gap-2 items-center px-4 py-2 bg-salmon rounded-lg text-white'><Heart size={18}/> Favorite</button>
+                            <FavoriteButton recipeId={recipe.id}/>
                         </div>
                     </div>
                     <div className='w-full h-72 relative'>
@@ -77,7 +78,7 @@ const RecipeDetailPage = () => {
                             </TabList>
                             <TabPanels>
                                 <TabPanel>
-                                    <IngredientsList ingredients={ recipe.ingredients}/>
+                                    <IngredientsList ingredients={ recipe.ingredients }/>
                                 </TabPanel>
                                 <TabPanel>
                                     <ToolsList tools={ recipe.tools }/>                            

@@ -31,7 +31,7 @@ const RecipePage = () => {
 
   return (
     <div className='max-w-screen-xl mx-auto'>
-        <h1 className='text-3xl mb-10 flex gap-2 justify-center items-center dark:text-dark-foreground'>Latest Recipes <Salad className='text-lime-400' size={26} /></h1>
+        <h1 className='text-3xl mb-10 flex gap-2 justify-center items-center dark:text-dark-foreground'>Latest Recipes <Salad className='text-lime-500' size={26} /></h1>
         <Swiper
             effect={'coverflow'}
             grabCursor={true}
