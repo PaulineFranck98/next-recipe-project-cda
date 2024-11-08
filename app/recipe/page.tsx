@@ -31,7 +31,7 @@ const RecipePage = () => {
 
   return (
     <div className='max-w-screen-xl mx-auto'>
-        <h1 className='text-3xl mb-10 flex gap-2 justify-center items-center'>Latest Recipes <Salad className='text-lime-400' size={26} /></h1>
+        <h1 className='text-3xl mb-10 flex gap-2 justify-center items-center dark:text-dark-foreground'>Latest Recipes <Salad className='text-lime-400' size={26} /></h1>
         <Swiper
             effect={'coverflow'}
             grabCursor={true}
@@ -40,10 +40,10 @@ const RecipePage = () => {
             spaceBetween={10}
             loop={true}
             coverflowEffect={{
-                rotate: 20,
+                rotate: 30,
                 stretch: 0,
                 depth: 100,
-                modifier: 1,
+                modifier: 0.5,
                 slideShadows: true,
             }}
             modules={[EffectCoverflow]}  

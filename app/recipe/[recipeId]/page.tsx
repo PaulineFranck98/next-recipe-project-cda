@@ -37,17 +37,17 @@ const RecipeDetailPage = () => {
     <div>
         {recipe && (
             <div>
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-3 bg-slate-800 rounded-md'>
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-3 bg-secondary dark:bg-dark-secondary rounded-md'>
                     <div className='flex flex-col items-center justify-center gap-4 p-5'>
-                        <h1 className='text-4xl text-center'>{ recipe.name }</h1>
+                        <h1 className='text-4xl text-center text-white'>{ recipe.name }</h1>
                         <div  className='flex gap-4'>
                             <CategoryTag category={ recipe.category.categoryName} />
-                            <span className='inline-flex items-center gap-2'><Clock10 size={20}/>{ recipe.preparationTime } min</span>
+                            <span className='inline-flex items-center gap-2 text-white'><Clock10 size={20}/>{ recipe.preparationTime } min</span>
                             <PreparationTimeGauge preparationTime={recipe.preparationTime}/>
                         </div>
                         <div className='flex gap-4 mt-4'>
                             <RecipePDFGenerator recipe={recipe} />
-                            <button className='flex gap-2 items-center px-4 py-2 bg-salmon rounded-lg'><Heart size={18}/> Favorite</button>
+                            <button className='flex gap-2 items-center px-4 py-2 bg-salmon rounded-lg text-white'><Heart size={18}/> Favorite</button>
                         </div>
                     </div>
                     <div className='w-full h-72 relative'>
@@ -70,10 +70,10 @@ const RecipeDetailPage = () => {
                     </div>
                     <div>
                         <h2 className='font-semibold text-salmon mb-6 text-xl inline-flex items-center gap-4'><CookingPot size={20} /> Ingredients and Tools</h2>
-                        <TabGroup className="border border-slate-800 rounded-md">
-                            <TabList className="bg-slate-800 rounded-md p-3 flex gap-3 ">
-                                <Tab className={({ selected }) => `rounded-lg px-4 py-2 font-semibold focus:outline-none ${selected ? 'bg-salmon' : 'bg-slate-800' }`}>Ingredients</Tab>
-                                <Tab  className={({ selected }) => `rounded-lg px-4 py-2 font-semibold  focus:outline-none ${selected ? 'bg-salmon' : 'bg-slate-800' }`}>Tools</Tab>
+                        <TabGroup className="border border-secondary dark:border-dark-secondary rounded-md">
+                            <TabList className="bg-secondary  dark:bg-dark-secondary rounded-md p-3 flex gap-3 text-white ">
+                                <Tab className={({ selected }) => `rounded-lg px-4 py-2 font-semibold focus:outline-none ${selected ? 'bg-salmon' : 'bg-secondary dark:bg-dark-secondary' }`}>Ingredients</Tab>
+                                <Tab  className={({ selected }) => `rounded-lg px-4 py-2 font-semibold  focus:outline-none ${selected ? 'bg-salmon' : 'bg-secondary  dark:bg-dark-secondary' }`}>Tools</Tab>
                             </TabList>
                             <TabPanels>
                                 <TabPanel>

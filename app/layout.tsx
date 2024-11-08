@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Merriweather } from 'next/font/google'
 import NavBar from "@/components/NavBar";
+import { Providers } from './providers'
 
 const merriweather = Merriweather({
   weight: ['300', '400', '700', '900'],
@@ -21,13 +22,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       
-      <body className={`${merriweather.className} antialiased`}>
-        <NavBar />
-        <main className="min-h-screen px-6 md:px-20">
-          {children}
-        </main>
+      <body className={`${merriweather.className} antialiased bg-background dark:bg-dark-background`}>
+        <Providers>
+          <NavBar />
+          <main className="min-h-screen px-6 md:px-20">
+            {children}
+          </main>
+        </Providers>
       </body>
     </html>
   );

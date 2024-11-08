@@ -42,7 +42,7 @@ const ArticleDetailPage = () => {
                             ))}
                         </div>
                         <h1 className='text-4xl font-semibold mb-5'>{ article.title }</h1>
-                        <p className='font-semibold text-slate-300 text-lg'>{ formatDate(article.publicationDate)}</p>
+                        <p className='font-semibold opacity-80 text-lg'>{ formatDate(article.publicationDate)}</p>
                     </div>
                 </div>
                 <div className='w-4/5 mx-auto'>
@@ -50,7 +50,9 @@ const ArticleDetailPage = () => {
                     <p className='text-justify'>{ article.content }</p>
                     
 
-                    <h2 className='text-salmon font-semibold flex gap-2 text-xl items-center mb-4 mt-6'> <MessageSquareQuote />Comments ({article.comments.length})</h2>
+                    <h2 className='text-salmon font-semibold flex gap-2 text-xl items-center mb-4 mt-6'> <MessageSquareQuote />
+                        Comments ({article.comments.length})
+                    </h2>
                     {article.comments && article.comments.length > 0 ? (
                         <div className='flex flex-col gap-5'>
                             { article.comments.map((comment: ArticleCommentType) => (

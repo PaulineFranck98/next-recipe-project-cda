@@ -99,7 +99,7 @@ const RecipePDFGenerator: React.FC<RecipePDFGeneratorProps> = ({ recipe }) => {
   return (
     <button
     onClick={generatePDF}
-    className='flex gap-2 items-center px-4 py-2 bg-salmon rounded-lg'
+    className='flex gap-2 items-center px-4 py-2 bg-salmon rounded-lg text-white'
     >
        <ArrowDownToLine size={18} />Download
     </button>

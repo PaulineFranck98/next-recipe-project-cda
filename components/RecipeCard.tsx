@@ -12,7 +12,7 @@ interface RecipeCardProps {
 
 const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
   return (
-    <div className='w-[270px] h-[450px] bg-slate-800 rounded-lg'>
+    <div className='w-[270px] h-[450px] bg-secondary dark:bg-dark-secondary rounded-lg'>
         <div className='w-full h-[200px] relative'>
             {recipe.imageUrl && (
                 <Image 
@@ -31,16 +31,16 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
             )}
         </div>
         <div className=' flex flex-col gap-3 items-start p-3'>
-            <h1 className='break-words text-xl'>
+            <h1 className='break-words text-xl text-white'>
                 { recipe.name }
             </h1>
             <CategoryTag category={recipe.category.categoryName} />
-            <span className='inline-flex items-center gap-2'><Clock10 size={20}/>{ recipe.preparationTime } min</span>
+            <span className='inline-flex items-center gap-2 text-white'><Clock10 size={20}/>{ recipe.preparationTime } min</span>
             <PreparationTimeGauge preparationTime={recipe.preparationTime}/>
             <Link 
                 key={recipe.id} 
                 href={`/recipe/${recipe.id}`}
-                className='border border-gray-400 py-1 px-2 rounded-md flex gap-2 items-center hover:bg-slate-700 duration-300'  
+                className='border border-white dark:border-gray-400 py-1 px-2 rounded-md flex gap-2 items-center hover:bg-hoverColor duration-300 text-white'  
             >
                 View Recipe <ChevronRight size={15} />
             </Link>
