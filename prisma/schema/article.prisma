@@ -4,11 +4,11 @@ model Article {
      publicationDate  DateTime @default(now())
      content String 
 
-     userId String @db.ObjectId
-     user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+     userId String 
+    
 
      comments ArticleComment[]
      themes ThemeArticle[]
 
-     @@index([userId])
+     
 }

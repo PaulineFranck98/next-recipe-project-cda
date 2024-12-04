@@ -3,6 +3,7 @@ import "./globals.css";
 import { Merriweather } from 'next/font/google'
 import NavBar from "@/components/NavBar";
 import { Providers } from './providers'
+import { dark } from '@clerk/themes';
 import { ClerkProvider } from '@clerk/nextjs';
 
 const merriweather = Merriweather({
@@ -23,7 +24,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider 
+      appearance={{
+        baseTheme: dark,
+      }}
+      afterSignOutUrl='/' 
+    >
       <html lang="en" suppressHydrationWarning>
         
         <body className={`${merriweather.className} antialiased bg-background dark:bg-dark-background`}>

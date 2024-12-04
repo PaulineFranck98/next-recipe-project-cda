@@ -1,10 +1,3 @@
-interface UserType {
-    id: string;
-    username: string;
-    email: string;
-    role: "USER" | "ADMIN"; 
-}
-
 
 interface CategoryType {
     id: string;
@@ -72,7 +65,8 @@ interface ArticleCommentType {
     id: string;
     commentText: string;
     creationDate: Date;
-    user: UserType
+    userId: string;
+    authorName: string;
 }
 
 interface ArticleWithCommentsAndThemes {
@@ -80,7 +74,7 @@ interface ArticleWithCommentsAndThemes {
     title: string;
     publicationDate: Date;
     content: string;
-    user: UserType;
+    userId: string;
     comments: ArticleCommentType[];
     themes: ThemeArticleType[];
 }

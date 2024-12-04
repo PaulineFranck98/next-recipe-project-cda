@@ -7,10 +7,12 @@ import { useParams } from 'next/navigation'
 import Image from 'next/image'
 import { NotebookText, MessageSquareQuote } from 'lucide-react';
 import { formatDate } from '@/lib/utils'
+import AddComment from '@/components/AddComment'
 
 const ArticleDetailPage = () => {
 
     const params = useParams()
+    
 
     const [article, setArticle] = useState<ArticleWithCommentsAndThemes | null>(null)
     
@@ -62,6 +64,7 @@ const ArticleDetailPage = () => {
                     ) : (
                         <p>No comments</p>
                     )}
+                    <AddComment articleId={params.articleId as string} />
                 </div>
             </div>
             )}

@@ -3,11 +3,10 @@ model Comment {
     textContent String
     createdAt DateTime @default(now())
     recipeId String @db.ObjectId
-    userId String @db.ObjectId
+    userId String
 
-    user User @relation(fields: [userId], references: [id], onDelete: Cascade)
     recipe Recipe @relation(fields: [recipeId], references: [id], onDelete:Cascade)
 
     @@index([recipeId])
-    @@index([userId])
+ 
 }

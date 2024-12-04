@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^6.2.1",
+    "@clerk/themes": "^2.1.48",
     "@headlessui/react": "^2.2.0",
     "@prisma/client": "^5.21.1",
     "cloudinary": "^2.5.1",

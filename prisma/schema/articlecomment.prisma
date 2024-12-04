@@ -3,12 +3,12 @@ model ArticleComment {
     commentText String 
     creationDate DateTime @default(now())
     articleId String @db.ObjectId
-    userId String @db.ObjectId
+    userId String 
+    authorName String
 
-    user User @relation(fields: [userId], references: [id], onDelete: Cascade) 
     article Article @relation(fields: [articleId], references: [id], onDelete: Cascade)
 
     @@index([articleId])
-    @@index([userId])
+   
 
 }
