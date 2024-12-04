@@ -13,7 +13,7 @@ const config: Config = {
         background: "#fdfdfd",
         foreground: "#171717",
         salmon: '#eb896a',
-        secondary: "#636B5B",
+        secondary: " #373d50",
         hoverColor: "#64685f",
         'dark-background' : "#131827",
         'dark-foreground' : '#ffffff',
@@ -27,3 +27,6 @@ const config: Config = {
   darkMode: 'class',
 };
 export default config;
+
+// #373d50
+// #afafaf

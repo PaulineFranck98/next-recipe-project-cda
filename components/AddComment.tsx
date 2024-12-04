@@ -10,31 +10,42 @@ const AddComment:React.FC<AddCommentProps> = ({articleId}) => {
     const [commentText, setCommentText] = useState('');
     const { isSignedIn } = useUser();
 
+    // React.FormEvent : spécifique aux événements liés aux formulaires
     const handleSubmit = async (e: React.FormEvent) => {
+
+        // j'empêche le rechargement de la page par défaut à la soumission du formulaire
         e.preventDefault();
 
+        // si l'utilisateur n'est pas connecté, j'arrête la fonction
         if(!isSignedIn){
             return;
         }
 
         try {
+            // je prépapare les données à envoyer
             const commentPayload = {
                 commentText,
                 articleId,
             };
 
-            console.log("Payload sent :", commentPayload);
-            const response = await fetch(`/api/comment`, {
+            // j'envoie la requête à l'API
+            const response = await fetch('/api/comment', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(commentPayload),
             });
+
             if(response.ok){
+                // si la requête réussit, je vide le champ du commentaire
                 setCommentText('');
+
             }else{
+
                 console.error("error submitting : ", response.statusText)
             }
+
         } catch (error) {
+
             console.error('Error submitting comment', error)
         }
     };

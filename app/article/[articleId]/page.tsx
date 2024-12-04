@@ -5,8 +5,10 @@ import Theme from '@/components/Theme'
 import ArticleComment from '@/components/ArticleComment'
 import { useParams } from 'next/navigation'
 import Image from 'next/image'
-import { NotebookText, MessageSquareQuote } from 'lucide-react';
+import { NotebookText, MessageSquareQuote, Trash2 } from 'lucide-react';
 import { formatDate } from '@/lib/utils'
+import { useUser } from  '@clerk/nextjs'
+
 import AddComment from '@/components/AddComment'
 
 const ArticleDetailPage = () => {
@@ -24,6 +26,25 @@ const ArticleDetailPage = () => {
         }
         fetchArticle()
       }, [params.articleId])
+
+      const { user } = useUser();
+
+      const isAuthor = user?.id ===article?.userId;
+
+      const handleDelete = async () => {
+        const confirmed = window.confirm('Are you sure you want to delete this?')
+          if(!confirmed){
+              return;
+          }
+        try {
+            await fetch(`/api/article/${params.articleId}`, {
+            method: 'DELETE',
+          });
+    
+        } catch (error) {
+          console.error('Failed to delete article', error);
+        }
+       }
     
   return (
     <div>
@@ -48,9 +69,15 @@ const ArticleDetailPage = () => {
                     </div>
                 </div>
                 <div className='w-4/5 mx-auto'>
+                    <div className='flex justify-between'>
                     <h2 className='text-salmon font-semibold flex gap-2 text-xl items-center mb-4'> <NotebookText /> Introduction</h2>
+                    {isAuthor && (
+                        <button onClick={handleDelete} className='px-2 rounded-md '>
+                            <Trash2 size={18} />
+                        </button>
+                    )}
+                    </div>
                     <p className='text-justify'>{ article.content }</p>
-                    
 
                     <h2 className='text-salmon font-semibold flex gap-2 text-xl items-center mb-4 mt-6'> <MessageSquareQuote />
                         Comments ({article.comments.length})

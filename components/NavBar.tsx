@@ -11,7 +11,7 @@ const NavBar = () => {
   
   return (
     <header>
-      <nav className='flex gap-3 bg-secondary dark:bg-dark-secondary px-16 py-4 mb-8 items-center justify-between'>
+      <nav className='flex gap-3 bg-secondary dark:bg-dark-secondary px-16 py-4 mb-8 items-center justify-between text-white'>
           <Image 
             src='https://res.cloudinary.com/dgydgrbim/image/upload/v1730899044/lets-cook-logo-lime_d9uk96.png'
             width={180}
@@ -47,7 +47,7 @@ const NavBar = () => {
           </SignedOut>
         </div> 
        <button>
-            <ThemeToggle />
+          <ThemeToggle />
        </button>
       </nav>
      

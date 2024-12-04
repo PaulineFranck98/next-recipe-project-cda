@@ -42,7 +42,7 @@ const ArticleComment:React.FC<ArticleCommentProps> = ( {comment }) => {
                 <p className='text-xs text-white flex items-baseline gap-1 opacity-80'>{ formatDate(comment.creationDate)}</p>
               </div>
               {isAuthor && (
-                <button onClick={handleDelete} className='bg-red-500 px-2  rounded-md '>
+                <button onClick={handleDelete} className='bg-red-500 px-2 text-white rounded-md '>
                   <Trash2 size={17} />
                 </button>
               )}

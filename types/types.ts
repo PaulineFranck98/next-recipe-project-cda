@@ -75,6 +75,7 @@ interface ArticleWithCommentsAndThemes {
     publicationDate: Date;
     content: string;
     userId: string;
+    authorName: string;
     comments: ArticleCommentType[];
     themes: ThemeArticleType[];
 }

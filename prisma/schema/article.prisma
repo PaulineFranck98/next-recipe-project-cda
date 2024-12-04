@@ -3,9 +3,8 @@ model Article {
      title String 
      publicationDate  DateTime @default(now())
      content String 
-
      userId String 
-    
+     authorName String
 
      comments ArticleComment[]
      themes ThemeArticle[]

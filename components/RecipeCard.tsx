@@ -9,7 +9,6 @@ interface RecipeCardProps {
     recipe: RecipeWithCategoryAndDetails
 }
 
-
 const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
   return (
     <div className='w-[270px] h-[450px] bg-secondary dark:bg-dark-secondary rounded-lg'>
@@ -35,8 +34,11 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
                 { recipe.name }
             </h1>
             <CategoryTag category={recipe.category.categoryName} />
+
             <span className='inline-flex items-center gap-2 text-white'><Clock10 size={20}/>{ recipe.preparationTime } min</span>
+
             <PreparationTimeGauge preparationTime={recipe.preparationTime}/>
+
             <Link 
                 key={recipe.id} 
                 href={`/recipe/${recipe.id}`}

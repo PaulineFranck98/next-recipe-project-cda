@@ -4,17 +4,15 @@ import { auth } from '@clerk/nextjs/server';
 
 
 export async function POST(req: NextRequest){
+
     try {
-        console.log("receiving request...")
-
+        // j'extrais les données envoyées dans le corps de la requête : je les stocke dans la variable body
         const body = await req.json()
-        console.log("request body:", body)
 
+        // je récupère les informations de l'utilisateur via Clerk
         const { sessionClaims, userId } = await auth();
-        console.log("authenticated user:", sessionClaims, userId)
 
         if(!userId){
-            console.log("unauthorized request")
             return new NextResponse("Unauthorized", { status: 401 });
         }
 
@@ -25,7 +23,7 @@ export async function POST(req: NextRequest){
             return new NextResponse("Unauthorized", { status: 401 });
         }
 
-
+        // je crée le nouveau commentaire
         const newComment = await db.articleComment.create({
             data:{
                 commentText: body.commentText,
@@ -36,10 +34,11 @@ export async function POST(req: NextRequest){
             },
     });
 
-    console.log("comment : ", newComment);
-    return Response.json(newComment, { status: 201 });
+    return Response.json(newComment, { status: 200 });
+
     } catch (error) {
         console.error('[COMMENT POST ERROR]', error);
+
         return new NextResponse("Internal Error", { status: 500 });
     }
 }

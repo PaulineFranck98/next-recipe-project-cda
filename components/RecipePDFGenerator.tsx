@@ -17,7 +17,7 @@ const RecipePDFGenerator: React.FC<RecipePDFGeneratorProps> = ({ recipe }) => {
         // Ajout d'un fond 
         const backgroundColor = '#131827'
         doc.setFillColor(backgroundColor)
-        doc.rect(0, 0, doc.internal.pageSize.getWidth(), doc.internal.pageSize.getHeight(), 'F') // 'F' pour remplir avec la couleur choisie
+        doc.rect(0, 0, doc.internal.pageSize.getWidth(), doc.internal.pageSize.getHeight(), 'F') // 'F' me permet de remplir avec la couleur choisie
         doc.setTextColor('#FFFFFF')
         // doc.setTextColor('#D0FE23')
 

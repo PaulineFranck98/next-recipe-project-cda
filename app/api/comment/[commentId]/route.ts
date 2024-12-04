@@ -24,13 +24,16 @@ export async function GET(req: NextRequest, { params }: { params: {commentId: st
 
 }
 
-
-
-export async function DELETE(req: NextRequest, { params }: { params: {commentId: string }})
+export async function PUT(req: NextRequest, { params }: { params: {commentId: string }})
 {
-    const { commentId } = params;
-     // = const commentId = params.commentId;
-     try{
+    try{
+
+        const body = await req.json();
+        const {commentText} = body;
+
+        const { commentId } = params;
+        // = const commentId = params.commentId;
+   
         // récupérer un comment spécifique
         const comment = await db.articleComment.findUnique({
             where : {
@@ -38,6 +41,35 @@ export async function DELETE(req: NextRequest, { params }: { params: {commentId:
             }
         })
 
+        // je mets à jour mon commentaire avec update 
+        await db.articleComment.update({
+            where:{id:comment?.id},
+            data: { commentText }
+        })
+
+        // Retourne une réponse au format JSON
+        return Response.json("Updated successfully", { status:200 })
+
+    } catch (error) {
+        console.log("[COMMENT]", error)
+        return new NextResponse("Internal Error", { status: 500})
+    }
+}
+
+
+export async function DELETE(req: NextRequest, { params }: { params: {commentId: string }})
+{
+    try{
+        const { commentId } = params;
+     
+        // récupérer un comment spécifique
+        const comment = await db.articleComment.findUnique({
+            where : {
+                id: commentId
+            }
+        })
+
+        // je supprime mon commentaire avec 'delete'
         await db.articleComment.delete({
             where:{id:comment?.id}
         })
