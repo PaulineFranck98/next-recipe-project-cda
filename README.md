@@ -73,15 +73,15 @@ Create a `.env` file in the root directory and add your MongoDB URL:
 ```
 DATABASE_URL="Your MongoDB URL"
 ```
-
+<br/>
 
 Create a `.env.local` file in the root directory and paste your Clerk API Credentials:
 ```
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY="<Your Publishable Key>"
 CLERK_SECRET_KEY="<Your Clerk Secret Key>"
 ```
-
-
+You can find those credential in the section "API keys" on your Clerk dashboard. If needed, here are more infos about [Clerk environment variables](https://clerk.com/docs/deployments/clerk-environment-variables?_gl=1*124mxpw*_gcl_au*ODIyNjQ3MjAxLjE3MzEwNzU0MjMuNTI4NTEzNDQ5LjE3MzMyNDAzNjQuMTczMzI0MDM2NA..*_ga*MTQ2MDg4MDU0MS4xNzMxMDc1NDIz*_ga_1WMF5X234K*MTczMzQxMTIzNy45LjEuMTczMzQxMTMwNi4wLjAuMA..#clerk-publishable-and-secret-keys)
+<br/>
 #### 4. __Set up Prisma:__
 
 Generate the Prisma client:
