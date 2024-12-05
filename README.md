@@ -16,29 +16,40 @@ __Let's Cook__ is a recipe application built with __Next.js__ and __Typescript._
 
 ### ⚙️ Technologies used
 
-* __[Next.js](https://nextjs.org/)__: A React framework for server-side rendering and full-stack capabilities.
-* __TypeScript__: A Javascript superset for static typing.
-* __[Prisma ORM](https://www.prisma.io/)__: For database management and interactions with MongoDB.
-* __[MongoDB](https://www.mongodb.com/fr-fr)__: A NoSQL database for storing recipes, articles, aso.
-* __[Clerk](https://clerk.com/)__: For user authentication and authorization management.
-* __[Swiper React](https://swiperjs.com/react)__: For carousel showcasing recipes.
-* __[HeadlessUI](https://headlessui.com/)__: For UI components.
-* __[TailwindCSS](https://tailwindcss.com/)__:
-* __[jsPDF](https://artskydj.github.io/jsPDF/docs/jsPDF.html)__: For PDF generation.
+* __[Next.js](https://nextjs.org/)__:  React framework for server-side rendering and static rendering.
+* __[TypeScript](https://www.typescriptlang.org/)__:  A strongly typed programming language that builds on JavaScript.
+* __[Prisma ORM](https://www.prisma.io/)__:  For database management and interactions with MongoDB.
+* __[MongoDB](https://www.mongodb.com/fr-fr)__:  A NoSQL database for storing recipes, articles, and so on.
+* __[Clerk](https://clerk.com/)__:  For user authentication and authorization management.
+* __[Swiper React](https://swiperjs.com/react)__:  For carousel showcasing recipes.
+* __[HeadlessUI](https://headlessui.com/)__:  For UI components.
+* __[TailwindCSS](https://tailwindcss.com/)__:  A utility-first CSS framework for rapidly building modern websites. 
+* __[jsPDF](https://artskydj.github.io/jsPDF/docs/jsPDF.html)__:  For PDF generation.
 
 ---
 
-### Prerequisites
+### 📁 Folder Structure
+```
+/pages         /* All Next.js pages */
+/components    /* Reusable React components */
+/api           /* API routes (CRUD for articles, comments recipes) */
+/lib           /* Utility functions and database configuration */
+```
+---
+
+### 🛠️ Prerequisites
 
 Before running this projets, ensure you have the following installed on your machine: 
 
 * __[Node.js](https://nodejs.org)__:  `v16.0.0` or higher
+  
+* __MongoDB__: A local or remote instance
 
 * __[Clerk](https://clerk.com/)__:  A configured account
 
 ---
 
-### Running locally in development mode
+### 💻 Running locally in development mode
 
 
 #### 1. __Clone the projet:__
@@ -94,3 +105,5 @@ npm run dev
 ```
 
 The application should now be running at http://localhost:3000
+
+
