@@ -12,7 +12,7 @@ __Let's Cook__ is a recipe application built with __Next.js__ and __Typescript._
 * Manage a culinary blog, with articles and associated themes.
 * Create, edit and delete recipes and articles.
 * Download recipes in PDF format.
-* Authenticate with Google, email or GitHub via Clerk
+* Authenticate with Google or email via Clerk
 
 ---
 
