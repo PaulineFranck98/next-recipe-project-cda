@@ -6,7 +6,7 @@
 
 ### 📃 Description
 
-__Let's Cook__ is a recipe application built with __Next.js__ and __Typescript.__ It allow users to:
+__Let's Cook__ is a recipe application built with __Next.js__.It allow users to:
 
 * Explore recipes and add them to favorites.
 * Manage a culinary blog, with articles and associated themes.
