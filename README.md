@@ -107,6 +107,8 @@ npm run dev
 
 The application should now be running at http://localhost:3000
 
+<br/>
+
 ---
 
 ### 🎨 Design Overview
