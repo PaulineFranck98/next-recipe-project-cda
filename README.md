@@ -1,6 +1,6 @@
 ![](/public/banner-lets-cook.png)
 
-<h1 align="center">Let's Cook🥗</h1>
+<h1 align="center">Let's Cook</h1>
 
 <br/>
 
