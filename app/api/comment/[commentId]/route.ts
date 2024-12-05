@@ -42,13 +42,13 @@ export async function PUT(req: NextRequest, { params }: { params: {commentId: st
         })
 
         // je mets à jour mon commentaire avec update 
-        await db.articleComment.update({
+         await db.articleComment.update({
             where:{id:comment?.id},
             data: { commentText }
         })
 
         // Retourne une réponse au format JSON
-        return Response.json("Updated successfully", { status:200 })
+        return Response.json("Updated successfuly", { status:200 })
 
     } catch (error) {
         console.log("[COMMENT]", error)

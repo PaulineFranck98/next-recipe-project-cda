@@ -22,7 +22,9 @@ export default function RecipeStepsSwiper ({ steps } : RecipeStepsSwiperProps) {
                     <h3 className='font-semibold text-center mb-5 text-3xl text-salmon'>
                         {index + 1}
                     </h3>
-                    <p className='font-light text-center text-white'>{step.text}</p>
+                    <p className='font-light text-center text-white'>
+                        {step.text}
+                    </p>
                 </div>
             </SwiperSlide>
         ))}

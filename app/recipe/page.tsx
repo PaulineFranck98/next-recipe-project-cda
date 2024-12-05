@@ -46,6 +46,23 @@ const RecipePage = () => {
                 modifier: 0.5,
                 slideShadows: true,
             }}
+            breakpoints={{
+                0:{
+                    slidesPerView:1,
+                    spaceBetween: 2,
+                    centeredSlides:true
+                },
+                480:{
+                    slidesPerView:3,
+                    spaceBetween: 10,
+                    centeredSlides:true
+                },
+                768:{
+                    slidesPerView:5,
+                    spaceBetween: 10,
+                    centeredSlides:true
+                },
+            }}
             modules={[EffectCoverflow]}  
         >
             { recipes.map((recipe) =>(

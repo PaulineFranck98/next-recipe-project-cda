@@ -25,7 +25,6 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
                 <div className='absolute top-2 right-2 flex gap-2 bg-white py-1 px-2  rounded-full bg-opacity-80'>
                     {recipe.isVegan && <Leaf size={22} strokeWidth={1} className='fill-lime-400 text-black'/>}
                     {recipe.isHealthy && <HeartPulse size={22} strokeWidth={1} className='fill-red-400 text-black'/>}
-
                 </div>
             )}
         </div>

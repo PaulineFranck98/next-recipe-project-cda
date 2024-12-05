@@ -5,9 +5,10 @@ import Theme from '@/components/Theme'
 import ArticleComment from '@/components/ArticleComment'
 import { useParams } from 'next/navigation'
 import Image from 'next/image'
-import { NotebookText, MessageSquareQuote, Trash2 } from 'lucide-react';
+import { NotebookText, MessageSquareQuote, Trash2, Pencil } from 'lucide-react';
 import { formatDate } from '@/lib/utils'
 import { useUser } from  '@clerk/nextjs'
+import Link from 'next/link';
 
 import AddComment from '@/components/AddComment'
 
@@ -64,17 +65,25 @@ const ArticleDetailPage = () => {
                                 <Theme key={themeArticle.theme.id} themeName={themeArticle.theme.themeName} />
                             ))}
                         </div>
-                        <h1 className='text-4xl font-semibold mb-5'>{ article.title }</h1>
-                        <p className='font-semibold opacity-80 text-lg'>{ formatDate(article.publicationDate)}</p>
+                        <h1 className='text-xl md:text-4xl font-semibold mb-5'>{ article.title }</h1>
+                        <p className='font-semibold opacity-80 text-sm md:text-lg'>{ formatDate(article.publicationDate)}</p>
                     </div>
                 </div>
                 <div className='w-4/5 mx-auto'>
                     <div className='flex justify-between'>
                     <h2 className='text-salmon font-semibold flex gap-2 text-xl items-center mb-4'> <NotebookText /> Introduction</h2>
                     {isAuthor && (
-                        <button onClick={handleDelete} className='px-2 rounded-md '>
-                            <Trash2 size={18} />
-                        </button>
+                        <div className='flex items-center'>
+                            <button onClick={handleDelete} className='px-2 rounded-md '>
+                                <Trash2 size={18} className='hover:text-red-400 duration-200'/>
+                            </button>
+                            <Link 
+                                href={`/article/${params.articleId}/updatearticle`}
+                                 className='hover:text-gray-400 duration-200'
+                            >
+                                <Pencil size={18}/>
+                            </Link>
+                        </div>
                     )}
                     </div>
                     <p className='text-justify'>{ article.content }</p>

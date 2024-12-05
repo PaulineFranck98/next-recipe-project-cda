@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import { useUser } from '@clerk/nextjs';
+import { useRouter } from 'next/navigation';
 
 interface AddCommentProps {
     articleId: string;
@@ -9,6 +10,7 @@ const AddComment:React.FC<AddCommentProps> = ({articleId}) => {
 
     const [commentText, setCommentText] = useState('');
     const { isSignedIn } = useUser();
+    const router = useRouter();
 
     // React.FormEvent : spécifique aux événements liés aux formulaires
     const handleSubmit = async (e: React.FormEvent) => {
@@ -37,7 +39,8 @@ const AddComment:React.FC<AddCommentProps> = ({articleId}) => {
 
             if(response.ok){
                 // si la requête réussit, je vide le champ du commentaire
-                setCommentText('');
+                // setCommentText('');
+                router.push(`/article/${articleId}`);
 
             }else{
 

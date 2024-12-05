@@ -27,10 +27,12 @@ const PreparationTimeGauge: React.FC<PreparationTimeGaugeProps> = ({ preparation
         color = 'text-red-500'
    }
 
+   // je déclare un tableau de 5 éléments, initialisés à null
    const gauges = Array(5).fill(null)
 
   return (
     <div className='flex gap-1'>
+     {/* je n'ai pas besoin de la valeur, mais seulement de l'index, j'utilise donc "_" par convention */}
       {gauges.map((_, index) => (
         <Gauge 
             key={index}
