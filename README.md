@@ -32,10 +32,15 @@ __Let's Cook__ is a recipe application built with __Next.js__ and __Typescript._
 
 ### 📁 Folder Structure
 ```
-/pages         /* All Next.js pages */
-/components    /* Reusable React components */
-/api           /* API routes (CRUD for articles, comments recipes) */
-/lib           /* Utility functions and database configuration */
+project-root
+├── app                 /* Entry point of the application */
+│   ├── api             /* API routes (CRUD for articles, comments, recipes) */
+│   ├── [features]      /* Feature-specific directories with corresponding pages */
+│   └── page.tsx        /* Entry point for the main page */
+├── prisma              /* Prisma ORM configuration and database schema */
+│   └── schema.prisma   /* Database models and structure */
+├── lib                 /* Utility functions and database configuration */
+└── components          /* Reusable React components */ 
 ```
 ---
 
