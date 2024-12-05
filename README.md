@@ -114,7 +114,7 @@ The application should now be running at http://localhost:3000
 ### 🎨 Design Overview
 
 #### Home Page
-![](/public/recipes-carousel.png)
+![](/public/homepage-recipes.png)
 *The main page showcasing recipes in a carousel.*
 
 #### Recipe Details
