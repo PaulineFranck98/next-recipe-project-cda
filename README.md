@@ -43,14 +43,30 @@ Before running this projets, ensure you have the following installed on your mac
 ### Running locally in development mode
 
 
-1. Clone the projet:
+__Clone the projet:__
    
 ```
 git clone https://github.com/PaulineFranck98/next-recipe-project-cda.git
 ```
+<br/>
 
-2. Install dependencies:
+__Install dependencies:__
 
 ```
 npm install
 ```
+<br/>
+
+__Configure environment variables:__
+
+create a `.env` file in the root directory and add your MongoDB URL: 
+```
+DATABASE_URL="Your MongoDB URL"
+```
+
+create a `.env.local` file int the root directory and paste your Clerk API Credentials:
+```
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY="<Your Publishable Key>"
+CLERK_SECRET_KEY="<Your Clerk Secret Key>"
+```
+
