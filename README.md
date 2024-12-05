@@ -1,3 +1,5 @@
+![](/public/banner-lets-cook.png)
+
 <h1 align="center">Let's Cook🥗</h1>
 
 <br/>
@@ -104,5 +106,23 @@ npm run dev
 ```
 
 The application should now be running at http://localhost:3000
+
+<br/>
+
+---
+
+### 🎨 Design Overview
+
+#### Home Page
+![](/public/recipes-carousel.png)
+*The main page showcasing recipes in a carousel.*
+
+#### Recipe Details
+![](/public/recipe-detail.png)
+*Detailed view of a recipe, including ingredients, tools and prepration steps.*
+
+#### Blog section
+![](/public/blog-recipe.png)
+*Users can read, post and respond to articles.*
 
 
