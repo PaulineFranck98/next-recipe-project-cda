@@ -57,14 +57,14 @@ Before running this projets, ensure you have the following installed on your mac
 ```
 git clone https://github.com/PaulineFranck98/next-recipe-project-cda.git
 ```
-<br/>
+
 
 #### 2. __Install dependencies:__
 
 ```
 npm install
 ```
-<br/>
+
 
 #### 3. __Configure environment variables:__
 
@@ -72,14 +72,14 @@ Create a `.env` file in the root directory and add your MongoDB URL:
 ```
 DATABASE_URL="Your MongoDB URL"
 ```
-<br/>
+
 
 Create a `.env.local` file in the root directory and paste your Clerk API Credentials:
 ```
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY="<Your Publishable Key>"
 CLERK_SECRET_KEY="<Your Clerk Secret Key>"
 ```
-<br/>
+
 
 #### 4. __Set up Prisma:__
 
@@ -97,7 +97,7 @@ You can also access a visual editor for the data in your database by running:
 ```
 npx prisma studio
 ```
-<br/>
+
 
 #### 5. __Start the application:__
 ```
