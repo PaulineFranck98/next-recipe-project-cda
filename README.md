@@ -119,7 +119,7 @@ The application should now be running at http://localhost:3000 🎉
 
 #### Recipe Details
 ![](/public/recipe-detail.png)
-*Detailed view of a recipe, including ingredients, tools and prepration steps.*
+*Detailed view of a recipe, including ingredients, tools and options to add the recipe to favorites or download it as a PDF.*
 
 #### Blog section
 ![](/public/blog-recipe.png)
