@@ -71,7 +71,7 @@ npm install
 
 Create a `.env` file in the root directory and add your MongoDB URL: 
 ```
-DATABASE_URL="Your MongoDB URL"
+DATABASE_URL="<Your MongoDB URL>"
 ```
 <br/>
 
