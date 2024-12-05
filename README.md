@@ -40,7 +40,7 @@ project-root
 ├── prisma              /* Prisma ORM configuration and database schema */
 │   └── schema.prisma   /* Database models and structure */
 ├── lib                 /* Utility functions and database configuration */
-└── components          /* Reusable React components */ 
+└── components          /* Reusable components */ 
 ```
 ---
 
