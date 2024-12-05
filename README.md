@@ -16,7 +16,7 @@ __Let's Cook__ is a recipe application built with __Next.js__ and __Typescript._
 
 ---
 
-### ⚙️ Technologies used
+### ⚙️ Technologies Used
 
 * __[Next.js](https://nextjs.org/)__:  React framework for server-side rendering and static rendering.
 * __[TypeScript](https://www.typescriptlang.org/)__:  A strongly typed programming language that builds on JavaScript.
