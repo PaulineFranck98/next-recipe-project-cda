@@ -43,7 +43,6 @@ Before running this projets, ensure you have the following installed on your mac
 
 * __[Node.js](https://nodejs.org)__:  `v16.0.0` or higher
   
-* __MongoDB__: A local or remote instance
 
 * __[Clerk](https://clerk.com/)__:  A configured account
 
