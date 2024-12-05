@@ -46,12 +46,9 @@ project-root
 
 ### 🛠️ Prerequisites
 
-Before running this projets, ensure you have the following installed on your machine: 
+You will need  __[Node.js](https://nodejs.org)__  `v16.0.0` or higher installed on your system.
 
-* __[Node.js](https://nodejs.org)__:  `v16.0.0` or higher
-  
-
-* __[Clerk](https://clerk.com/)__:  A configured account
+You will also need to have a  __[Clerk](https://clerk.com/)__ account.
 
 ---
 
