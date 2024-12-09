@@ -1,11 +1,13 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+
 import { db } from "@/lib/db";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(req: NextRequest, { params }: { params: {articleId: string }})
+export async function GET(req: NextRequest, { params }: { params: {articleId: any}})
 {
+    try{ 
      const { articleId } = params;
      // = const articleId = params.articleId;
-     try{
         // récupérer un article spécifique
         const article = await db.article.findUnique({
             where : {
