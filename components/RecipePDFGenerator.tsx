@@ -1,3 +1,5 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+
 import React from 'react'
 import jsPDF from 'jspdf'
 import autoTable, { applyPlugin } from 'jspdf-autotable'
