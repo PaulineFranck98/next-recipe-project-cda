@@ -1,22 +1,22 @@
 ![](/public/banner-lets-cook.png)
 
-<h1 align="center">Let's Cook🥗</h1>
+<h1 align="center">Let's Cook</h1>
 
 <br/>
 
 ### 📃 Description
 
-__Let's Cook__ is a recipe application built with __Next.js__ and __Typescript.__ It allow users to:
+__Let's Cook__ is a recipe application built with __Next.js__.It allow users to:
 
 * Explore recipes and add them to favorites.
 * Manage a culinary blog, with articles and associated themes.
 * Create, edit and delete recipes and articles.
 * Download recipes in PDF format.
-* Authenticate with Google, email or GitHub via Clerk
+* Authenticate with Google or email via Clerk
 
 ---
 
-### ⚙️ Technologies used
+### ⚙️ Technologies Used
 
 * __[Next.js](https://nextjs.org/)__:  React framework for server-side rendering and static rendering.
 * __[TypeScript](https://www.typescriptlang.org/)__:  A strongly typed programming language that builds on JavaScript.
@@ -32,21 +32,23 @@ __Let's Cook__ is a recipe application built with __Next.js__ and __Typescript._
 
 ### 📁 Folder Structure
 ```
-/pages         /* All Next.js pages */
-/components    /* Reusable React components */
-/api           /* API routes (CRUD for articles, comments recipes) */
-/lib           /* Utility functions and database configuration */
+project-root
+├── app                 /* Entry point of the application */
+│   ├── api             /* API routes (CRUD for articles, comments, recipes) */
+│   ├── [features]      /* Feature-specific directories with corresponding pages */
+│   └── page.tsx        /* Entry point for the main page */
+├── prisma              /* Prisma ORM configuration and database schema */
+│   └── schema.prisma   /* Database models and structure */
+├── lib                 /* Utility functions and database configuration */
+└── components          /* Reusable components */ 
 ```
 ---
 
 ### 🛠️ Prerequisites
 
-Before running this projets, ensure you have the following installed on your machine: 
+You will need  __[Node.js](https://nodejs.org)__  `v16.0.0` or higher installed on your system.
 
-* __[Node.js](https://nodejs.org)__:  `v16.0.0` or higher
-  
-
-* __[Clerk](https://clerk.com/)__:  A configured account
+You will also need to have a  __[Clerk](https://clerk.com/)__ account.
 
 ---
 
@@ -71,17 +73,17 @@ npm install
 
 Create a `.env` file in the root directory and add your MongoDB URL: 
 ```
-DATABASE_URL="Your MongoDB URL"
+DATABASE_URL="<Your MongoDB URL>"
 ```
+<br/>
 
-
-Create a `.env.local` file in the root directory and paste your Clerk API Credentials:
+Create a `.env.local` file in the root directory and paste your [Clerk API Credentials](https://clerk.com/docs/deployments/clerk-environment-variables?_gl=1*124mxpw*_gcl_au*ODIyNjQ3MjAxLjE3MzEwNzU0MjMuNTI4NTEzNDQ5LjE3MzMyNDAzNjQuMTczMzI0MDM2NA..*_ga*MTQ2MDg4MDU0MS4xNzMxMDc1NDIz*_ga_1WMF5X234K*MTczMzQxMTIzNy45LjEuMTczMzQxMTMwNi4wLjAuMA..#clerk-publishable-and-secret-keys):
 ```
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY="<Your Publishable Key>"
 CLERK_SECRET_KEY="<Your Clerk Secret Key>"
 ```
-
-
+You can find those credential in the section "API keys" on your Clerk dashboard. 
+<br/>
 #### 4. __Set up Prisma:__
 
 Generate the Prisma client:
@@ -105,7 +107,7 @@ npx prisma studio
 npm run dev
 ```
 
-The application should now be running at http://localhost:3000
+The application should now be running at http://localhost:3000 🎉
 
 <br/>
 
@@ -114,12 +116,12 @@ The application should now be running at http://localhost:3000
 ### 🎨 Design Overview
 
 #### Home Page
-![](/public/recipes-carousel.png)
+![](/public/homepage-recipes.png)
 *The main page showcasing recipes in a carousel.*
 
 #### Recipe Details
 ![](/public/recipe-detail.png)
-*Detailed view of a recipe, including ingredients, tools and prepration steps.*
+*Detailed view of a recipe, including ingredients, tools and options to add the recipe to favorites or download it as a PDF.*
 
 #### Blog section
 ![](/public/blog-recipe.png)
