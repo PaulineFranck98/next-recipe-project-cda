@@ -16,7 +16,8 @@ export async function POST(req: NextRequest){
             return new NextResponse("Unauthorized", { status: 401 });
         }
 
-        const fullName = sessionClaims?.fullName || "Anonymous";
+        // const fullName = sessionClaims?.fullName || "Anonymous";
+        const fullName = (sessionClaims?.fullName || "Anonymous") as string;
 
         if(!fullName){
             console.log("unauthorized request")
