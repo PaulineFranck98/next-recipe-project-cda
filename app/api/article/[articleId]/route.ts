@@ -3,7 +3,7 @@
 import { db } from "@/lib/db";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(req: NextRequest, { params }: { params: {articleId: any}})
+export async function GET(req: NextRequest, { params }: { params: {articleId: string}})
 {
     try{ 
      const { articleId } = params;
