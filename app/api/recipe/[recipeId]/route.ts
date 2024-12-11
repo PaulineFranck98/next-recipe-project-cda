@@ -1,11 +1,15 @@
 import { db } from "@/lib/db";
 import { NextResponse, NextRequest } from "next/server";
 
-export async function GET(req: NextRequest, { params }: { params: {recipeId: string}})
-{
-    const { recipeId } = params;
+// export async function GET(req: NextRequest, { params }: { params: {recipeId: string}})
+// {
+//     const { recipeId } = params;
 
+//     try {
+export async function GET(req: NextRequest, { params }: { params: Promise<{ recipeId: string }> }) {
     try {
+        const resolvedParams = await params; 
+        const { recipeId } = resolvedParams;
         // récupérer une recette spécifique
         const recipe = await db.recipe.findUnique({
             where : {

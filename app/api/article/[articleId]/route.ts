@@ -41,13 +41,20 @@ export async function GET(
 
 }
 
-export async function PUT(req: NextRequest, { params }: { params: {articleId: string }}){
+// export async function PUT(req: NextRequest, { params }: { params: {articleId: string }}){
+    export async function PUT(
+        req: NextRequest,
+        { params }: { params: Promise<{ articleId: string }> }
+      ) {
+        try {
+          const resolvedParams = await params; 
+          const { articleId } = resolvedParams;
     
-    try{
+    // try{
         const body = await req.json();
         const { title, content, themeId:themeIds} = body;
 
-        const { articleId } = params;
+        // const { articleId } = params;
         // = const articleId = params.articleId;
    
         // récupérer un article spécifique
@@ -82,11 +89,18 @@ export async function PUT(req: NextRequest, { params }: { params: {articleId: st
 
 }
 
-export async function DELETE(req: NextRequest, { params }: { params: {articleId: string }})
-{
-    const { articleId } = params;
-     // = const articleId = params.articleId;
-     try{
+// export async function DELETE(req: NextRequest, { params }: { params: {articleId: string }})
+// {
+//     const { articleId } = params;
+//      // = const articleId = params.articleId;
+//      try{
+    export async function DELETE(
+        req: NextRequest,
+        { params }: { params: Promise<{ articleId: string }> }
+      ) {
+        try {
+          const resolvedParams = await params; 
+          const { articleId } = resolvedParams;
         // récupérer un article spécifique
         const article = await db.article.findUnique({
             where : {
