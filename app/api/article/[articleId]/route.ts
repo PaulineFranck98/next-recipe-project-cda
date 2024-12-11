@@ -4,10 +4,13 @@ import { db } from "@/lib/db";
 import { NextRequest, NextResponse } from "next/server";
 
 // export async function GET(req: NextRequest, { params }: { params: {articleId: string}})
-export async function GET(req: NextRequest, { params }: { params: Record<string, string> }) 
-{
-    try{ 
-     const { articleId } = params;
+export async function GET(
+    req: NextRequest,
+    { params }: { params: Promise<{ articleId: string }> }
+  ) {
+    try {
+      const resolvedParams = await params; 
+      const { articleId } = resolvedParams;
      // = const articleId = params.articleId;
         // récupérer un article spécifique
         const article = await db.article.findUnique({
